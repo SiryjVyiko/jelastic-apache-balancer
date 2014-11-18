@@ -1,0 +1,5 @@
+#!/bin/sh
+
+start() {
+return 0;
+}
