@@ -23,8 +23,8 @@
 # Source function library.
 . /etc/rc.d/init.d/functions
 
-if [ -f /opt/repo/versions/2.4.10/conf/httpd ]; then
-        . /opt/repo/versions/2.4.10/conf/httpd
+if [ -f /etc/sysconfig/httpd ]; then
+        . /etc/sysconfig/httpd
 fi
 
 # Start httpd in the C locale by default.
