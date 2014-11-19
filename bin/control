@@ -51,6 +51,9 @@ STOP_TIMEOUT=${STOP_TIMEOUT-10}
 # things -- attempting to start while running is a failure, and shutdown
 # when not running is also a failure.  So we just do it the way init scripts
 # are expected to behave here.
+
+sudo /usr/sbin/setcap cap_net_bind_service=+ep /opt/repo/versions/2.4.10/bin/httpd
+
 start() {
         return 0;
         echo -n $"Starting $prog: "
