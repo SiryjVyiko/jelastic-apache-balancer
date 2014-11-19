@@ -42,8 +42,8 @@ INITLOG_ARGS=""
 apachectl=/opt/repo/versions/2.4.10/sbin/apachectl
 httpd=${HTTPD-/opt/repo/versions/2.4.10/bin/httpd}
 prog=httpd
-pidfile=${PIDFILE-/opt/repo/versions/2.4.10/run/httpd/httpd.pid}
-lockfile=${LOCKFILE-/opt/repo/versions/2.4.10/lock/subsys/httpd}
+pidfile=${PIDFILE-/opt/repo/run/httpd/httpd.pid}
+lockfile=${LOCKFILE-/opt/repo/lock/subsys/httpd}
 RETVAL=0
 STOP_TIMEOUT=${STOP_TIMEOUT-10}
 
