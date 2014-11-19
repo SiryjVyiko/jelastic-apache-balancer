@@ -52,6 +52,7 @@ STOP_TIMEOUT=${STOP_TIMEOUT-10}
 # when not running is also a failure.  So we just do it the way init scripts
 # are expected to behave here.
 start() {
+        return 0;
         echo -n $"Starting $prog: "
         LANG=$HTTPD_LANG daemon --pidfile=${pidfile} $httpd $OPTIONS -f /opt/repo/versions/2.4.10/conf/httpd.conf
         RETVAL=$?
