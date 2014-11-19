@@ -1,7 +1,5 @@
 #!/bin/bash -eu
 
-mkdir /opt/repo/versions/2.4.10/logs;
-
 /sbin/iptables -t nat -D PREROUTING -p tcp -m tcp --dport 80 -j REDIRECT --to-ports 8080
 /sbin/iptables -I INPUT -p tcp --dport 80 -j ACCEPT
 /etc/init.d/iptables save
