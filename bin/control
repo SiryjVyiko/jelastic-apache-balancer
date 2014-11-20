@@ -55,6 +55,7 @@ STOP_TIMEOUT=${STOP_TIMEOUT-10}
 sudo /usr/sbin/setcap cap_net_bind_service=+ep /opt/repo/versions/2.4.10/bin/httpd
 
 start() {
+        return 0;
         echo -n $"Starting $prog: "
         LANG=$HTTPD_LANG daemon --pidfile=${pidfile} $httpd $OPTIONS -f /opt/repo/versions/2.4.10/conf/httpd.conf
         RETVAL=$?

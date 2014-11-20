@@ -1,9 +1,0 @@
-#! /bin/sh
-#
-# Created by configure
-
-"./configure" \
-"--enable-ssl" \
-"--enable-so" \
-"--with-included-apr" \
-"$@"
