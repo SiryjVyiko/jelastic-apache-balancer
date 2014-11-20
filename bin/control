@@ -1,17 +1,18 @@
 #!/bin/bash
 
 start() {
-        /etc/init.d/httpd start;
+        return 0;
+        sudo /etc/init.d/httpd start;
 }
 
 # When stopping httpd, a delay (of default 10 second) is required
 # before SIGKILLing the httpd parent; this gives enough time for the
 # httpd parent to SIGKILL any errant children.
 stop() {
-        /etc/init.d/httpd stop;
+        sudo /etc/init.d/httpd stop;
 }
 reload() {
-        /etc/init.d/httpd reload;
+        sudo /etc/init.d/httpd reload;
 }
 
 # See how we were called.
