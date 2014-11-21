@@ -8,7 +8,7 @@
 
 echo "jelastic ALL=(ALL) NOPASSWD: /usr/sbin/setcap" >> /etc/sudoers
 
-sed -i '1 i\#Include conf/virtualhosts.conf\n' /etc/httpd/conf/httpd.conf
+sed -i '1 i\Include conf/virtualhosts.conf\n' /etc/httpd/conf/httpd.conf
 sed -i '/Listen 80/a Listen 443\nListen 8009\n' /etc/httpd/conf/httpd.conf
 
 cp /opt/repo/virtualhosts.conf /etc/httpd/conf/virtualhosts.conf
