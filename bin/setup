@@ -7,3 +7,5 @@
 /etc/init.d/iptables save
 
 echo "jelastic ALL=(ALL) NOPASSWD: /usr/sbin/setcap" >> /etc/sudoers
+
+sed -i '1 i\#Include conf/virtualhosts.conf\n' /etc/httpd/conf/httpd.conf
