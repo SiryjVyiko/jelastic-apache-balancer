@@ -5,17 +5,19 @@ function _set_neighbors(){
 }
 
 function _rebuild_common(){
-return 0;
+    sudo /etc/init.d/httpd reload
 }
 
 function _add_common_host(){
-    return 0;
+    sed -i '/<Proxy balancer://myclusterhttp>/a BalancerMember http://${host}' /etc/httpd/conf/virtualhosts.conf;
+    sed -i '/<Proxy balancer://myclusterhttps>/a BalancerMember https://${host}' /etc/httpd/conf/virtualhosts.conf;
+    sed -i '/<Proxy balancer://myclusterajp>/a BalancerMember ajp://${host}:8009' /etc/httpd/conf/virtualhosts.conf;
 }
 
 
 
 function _remove_common_host(){
-   return 0;
+   sed -i '/'${host}'/d' /etc/httpd/conf/virtualhosts.conf;
 }
 
 
