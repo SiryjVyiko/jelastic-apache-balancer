@@ -10,7 +10,7 @@ SERVER_XML_CONFIG="/etc/httpd/conf.d/ssl.conf";
 
 function _enableSSL(){
         local default_httpd_conf="/etc/httpd/conf/httpd.conf"
-        grep -q "OPENSSL_NO_DEFAULT_ZLIB" $default_httpd_conf || echo "export OPENSSL_NO_DEFAULT_ZLIB=1" >>  $default_httpd_conf;
+        #grep -q "OPENSSL_NO_DEFAULT_ZLIB" $default_httpd_conf || echo "export OPENSSL_NO_DEFAULT_ZLIB=1" >>  $default_httpd_conf;
         local err;
         doAction keystore DownloadKeys;
         err=$?; [[ ${err} -gt 0 ]] && exit ${err};
