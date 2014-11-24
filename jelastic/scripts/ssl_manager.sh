@@ -15,7 +15,7 @@ function _enableSSL(){
         doAction keystore DownloadKeys;
         err=$?; [[ ${err} -gt 0 ]] && exit ${err};
         $_SED -i 's/SSLEngine=\"off\"/SSLEnabled=\"on\"/g' $SERVER_XML_CONFIG;
-        sed -i "/^#LoadModule.*ssl_module.*/ s/^#LoadModule/LoadModule/" /etc/httpd/conf.d/ssl.conf||  { writeJSONResponceErr "result=>4020" "message=>Cannot enable SSL module!"; return 4020; };
+        sed -i "/^#LoadModule ssl_module.*/ s/^#LoadModule/LoadModule/" /etc/httpd/conf.d/ssl.conf||  { writeJSONResponceErr "result=>4020" "message=>Cannot enable SSL module!"; return 4020; };
         service httpd restart >> /dev/null;
 }
 
