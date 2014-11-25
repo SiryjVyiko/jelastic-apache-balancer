@@ -18,6 +18,7 @@ function _add_common_host(){
 
 function _remove_common_host(){
    sed -i '/'${host}'/d' /etc/httpd/conf/virtualhosts.conf;
+   sed -i '/'${host}'/d' /opt/shared/conf.d/ssl.conf;
 }
 
 
