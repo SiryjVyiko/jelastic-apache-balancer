@@ -1,7 +1,7 @@
 Name: apache-balancer
 Cartridge-Short-Name: APACHE
 Display-Name: APACHE
-Description: "Apache-balancer"
+Description: "Apache"
 Version: '2.2.15'
 License: 'Apache licence'
 License-Url: 
