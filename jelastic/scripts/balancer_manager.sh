@@ -10,7 +10,7 @@ function _rebuild_common(){
 
 function _add_common_host(){
     sed -i '/<Proxy balancer:\/\/myclusterhttp>/a BalancerMember http:\/\/'${host}'' /etc/httpd/conf/virtualhosts.conf;
-    sed -i '/<Proxy balancer:\/\/myclusterhttps>/a BalancerMember https:\/\/'${host}'' /etc/httpd/conf/virtualhosts.conf;
+    #sed -i '/<Proxy balancer:\/\/myclusterhttps>/a BalancerMember https:\/\/'${host}'' /etc/httpd/conf/virtualhosts.conf;
     sed -i '/<Proxy balancer:\/\/myclusterajp>/a BalancerMember ajp:\/\/'${host}':8009' /etc/httpd/conf/virtualhosts.conf;
 }
 
