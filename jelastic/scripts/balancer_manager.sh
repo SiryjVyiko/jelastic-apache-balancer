@@ -9,9 +9,11 @@ function _rebuild_common(){
 }
 
 function _add_common_host(){
+    grep -q "${host}" /etc/httpd/conf/virtualhosts.conf && return 0;
     sed -i '/<Proxy balancer:\/\/myclusterhttp>/a BalancerMember http:\/\/'${host}'' /etc/httpd/conf/virtualhosts.conf;
-    sed -i '/<Proxy balancer:\/\/myclusterhttps>/a BalancerMember http:\/\/'${host}'' /opt/shared/conf.d/ssl.conf;
     sed -i '/<Proxy balancer:\/\/myclusterajp>/a BalancerMember ajp:\/\/'${host}':8009' /etc/httpd/conf/virtualhosts.conf;
+    grep -q "${host}" /opt/shared/conf.d/ssl.conf && return 0;
+    sed -i '/<Proxy balancer:\/\/myclusterhttps>/a BalancerMember http:\/\/'${host}'' /opt/shared/conf.d/ssl.conf;
 }
 
 
