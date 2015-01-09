@@ -1,0 +1,3 @@
+#!/bin/bash -eu
+
+ln -s /var/log/httpd/ logs
