@@ -1,3 +1,5 @@
 #!/bin/bash -eu
 
 ln -s /var/log/httpd/ logs
+cp /opt/repo/virtualhosts.conf /etc/httpd/conf/virtualhosts.conf
+cp /opt/repo/ssl.conf /etc/httpd/conf.d/ssl.conf
