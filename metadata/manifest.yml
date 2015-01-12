@@ -1,4 +1,4 @@
-Name: apache-balancer
+Name: Apache-LB
 Cartridge-Short-Name: APACHE
 Display-Name: APACHE
 Description: "Apache"
