@@ -9,7 +9,6 @@ function _rebuild_common(){
 }
 
 function _add_common_host(){
-    grep -q "${host}" /etc/httpd/conf/virtualhosts.conf && return 0;
     host_num=`cat /etc/httpd/conf/virtualhosts_http.conf|grep BalancerMember | awk '{print $3}' | sed 's/route=//g' | sort | tail -n1`;
     let "host_num+=1";
     sed -i '/<Proxy balancer:\/\/myclusterhttp>/a BalancerMember http:\/\/'${host}' route='${host_num}'' /etc/httpd/conf/virtualhosts_http.conf;
