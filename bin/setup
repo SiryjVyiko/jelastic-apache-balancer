@@ -9,7 +9,9 @@
 
 echo "jelastic ALL=(ALL) NOPASSWD: /usr/sbin/setcap" >> /etc/sudoers
 
-sed -i '1 i\Include conf/virtualhosts.conf\n' /etc/httpd/conf/httpd.conf
+sed -i '1 i\Include conf/virtualhosts_http.conf\n' /etc/httpd/conf/httpd.conf
+sed -i '1 i\Include conf/virtualhosts_ajp.conf\n' /etc/httpd/conf/httpd.conf
+sed -i '1 i\Include conf/virtualhosts_jk.conf\n' /etc/httpd/conf/httpd.conf
 sed -i '2 i\#LoadModule ssl_module modules/mod_ssl.so\n' /etc/httpd/conf/httpd.conf
 sed -i '/Listen 80/a Listen 8009\n' /etc/httpd/conf/httpd.conf
 

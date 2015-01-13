@@ -1,5 +1,7 @@
 #!/bin/bash -eu
 
 ln -s /var/log/httpd/ logs
-cp /opt/repo/versions/2.2/virtualhosts.conf /etc/httpd/conf/virtualhosts.conf
+cp /opt/repo/versions/2.2/virtualhosts_http.conf /etc/httpd/conf/virtualhosts_http.conf
+cp /opt/repo/versions/2.2/virtualhosts_ajp.conf /etc/httpd/conf/virtualhosts_ajp.conf
+cp /opt/repo/versions/2.2/virtualhosts_jk.conf /etc/httpd/conf/virtualhosts_jk.conf
 cp /opt/repo/versions/2.2/ssl.conf /etc/httpd/conf.d/ssl.conf
