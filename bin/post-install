@@ -14,4 +14,4 @@ cp -f /opt/repo/versions/2.2/virtualhosts_http.conf /etc/httpd/conf/virtualhosts
 cp -f /opt/repo/versions/2.2/virtualhosts_ajp.conf /etc/httpd/conf/virtualhosts_ajp.conf;
 cp -f /opt/repo/versions/2.2/virtualhosts_jk.conf /etc/httpd/conf/virtualhosts_jk.conf;
 cp -f /opt/repo/versions/2.2/ssl.conf /etc/httpd/conf.d/ssl.conf;
-cp -f /opt/repo/versions/2.2/worker.properties /etc/httpd/conf.d/worker.properties;
+cp -f /opt/repo/versions/2.2/worker.properties /etc/httpd/conf/worker.properties;
