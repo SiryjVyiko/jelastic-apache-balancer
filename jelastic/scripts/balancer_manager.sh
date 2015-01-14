@@ -24,7 +24,7 @@ function _add_common_host(){
 function _remove_common_host(){
    sed -i '/'${host}'/d' /etc/httpd/conf/virtualhosts_http.conf;
    sed -i '/'${host}'/d' /etc/httpd/conf/virtualhosts_ajp.conf;
-   sed -i '/'${host}'/d' /etc/httpd/conf/virtualhosts_jk.conf;
+   sed -i '/'${host}'/d' /etc/httpd/conf/worker.properties;
 }
 
 
