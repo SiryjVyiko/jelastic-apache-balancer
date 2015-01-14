@@ -15,6 +15,8 @@ function _add_common_host(){
     sed -i '/<Proxy balancer:\/\/myclusterhttp>/a BalancerMember http:\/\/'${host}' route='${host_num}'' /etc/httpd/conf/virtualhosts_http.conf;
     sed -i '/<Proxy balancer:\/\/myclusterajp>/a BalancerMember ajp:\/\/'${host}':8009' /etc/httpd/conf/virtualhosts_ajp.conf;
     echo 'worker.worker'${host_num}'.type=ajp13' >> /etc/httpd/conf/worker.properties;
+    echo 'worker.worker'${host_num}'.host'=${host} >> /etc/httpd/conf/worker.properties;
+    echo 'worker.worker'${host_num}'.port=8009' >> /etc/httpd/conf/worker.properties;
 }
 
 
