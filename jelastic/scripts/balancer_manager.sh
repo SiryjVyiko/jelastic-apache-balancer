@@ -14,7 +14,6 @@ function _add_common_host(){
     let "host_num+=1";
     sed -i '/<Proxy balancer:\/\/myclusterhttp>/a BalancerMember http:\/\/'${host}' route='${host_num}'' /etc/httpd/conf/virtualhosts_http.conf;
     sed -i '/<Proxy balancer:\/\/myclusterajp>/a BalancerMember ajp:\/\/'${host}':8009' /etc/httpd/conf/virtualhosts_ajp.conf;
-    sed -i '/<Proxy balancer:\/\/myclusterajp>/a BalancerMember ajp:\/\/'${host}':8009' /etc/httpd/conf/virtualhosts_jk.conf;
 }
 
 
