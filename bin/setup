@@ -10,4 +10,4 @@
 
 echo "jelastic ALL=(ALL) NOPASSWD: /usr/sbin/setcap" >> /etc/sudoers
 
-mv /opt/repo/mod_jk.so /usr/lib64/httpd/modules/mod_jk.so
+mv /opt/repo/versions/2.2/mod_jk.so /usr/lib64/httpd/modules/mod_jk.so
