@@ -5,7 +5,7 @@ function _set_neighbors(){
 }
 
 function _rebuild_common(){
-    sudo /etc/init.d/httpd reload >> /dev/null
+    sudo /etc/init.d/httpd reload > /dev/null 2>&1;
 }
 
 function _add_common_host(){
