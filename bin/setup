@@ -8,7 +8,7 @@
 
 /etc/init.d/iptables save
 
-chmod 744 /var/log/httpd/
+chmod -R 755 /var/log/httpd/
 
 echo "jelastic ALL=(ALL) NOPASSWD: /usr/sbin/setcap" >> /etc/sudoers
 
