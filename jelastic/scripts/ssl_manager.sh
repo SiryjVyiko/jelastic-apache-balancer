@@ -16,7 +16,7 @@ function _enableSSL(){
         err=$?; [[ ${err} -gt 0 ]] && exit ${err};
         $_SED -i 's/SSLEngine=\"off\"/SSLEnabled=\"on\"/g' $SERVER_XML_CONFIG;
         sed -i "/^#LoadModule.*ssl_module.*/ s/^#LoadModule/LoadModule/" /etc/httpd/conf/httpd.conf||  { writeJSONResponceErr "result=>4020" "message=>Cannot enable SSL module!"; return 4020; };
-        ed -i "/^#LoadModule.*ssl_module.*/ s/^#LoadModule/LoadModule/" ${CARTRIDGE_HOME}/versions/2.2/httpd.conf
+        sed -i "/^#LoadModule.*ssl_module.*/ s/^#LoadModule/LoadModule/" ${CARTRIDGE_HOME}/versions/2.2/httpd.conf
         service httpd restart >> /dev/null;
 }
 
