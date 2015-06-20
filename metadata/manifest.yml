@@ -2,10 +2,9 @@ Name: Apache
 Cartridge-Short-Name: APACHE
 Display-Name: APACHE
 Description: "Apache"
-Version: '2.2'
+Version: '2.4'
 License: 'Apache licence'
 License-Url: 
-Vendor: Eclipse
 Cartridge-Version: 2.2
 Cartridge-Vendor: Jelastic
 Categories:
