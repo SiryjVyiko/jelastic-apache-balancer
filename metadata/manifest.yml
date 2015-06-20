@@ -5,7 +5,7 @@ Description: "Apache"
 Version: '2.4'
 License: 'Apache licence'
 License-Url: 
-Vendor: Apache
+Vendor: Apache Fondation
 Cartridge-Version: 2.2
 Cartridge-Vendor: Jelastic
 Categories:
