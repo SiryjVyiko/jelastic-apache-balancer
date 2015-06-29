@@ -21,6 +21,7 @@
 ### END INIT INFO
 
 # Source function library.
+SYSTEMCTL_SKIP_REDIRECT=1
 . /etc/rc.d/init.d/functions
 
 if [ -f /etc/sysconfig/httpd ]; then
