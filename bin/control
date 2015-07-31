@@ -23,8 +23,7 @@ case "$1" in
         stop
         ;;
   status)
-        status -p ${pidfile} $httpd
-        RETVAL=$?
+        sudo /etc/init.d/httpd status;
         ;;
   restart)
         stop
