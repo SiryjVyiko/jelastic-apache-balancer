@@ -1,12 +1,11 @@
 #!/bin/bash
 
 start() {
+	sudo service cartridge status > /dev/null;
+	[ $? == "0" ] && { echo "Server is already started"; exit 0; }
         sudo /etc/init.d/httpd start;
 }
 
-# When stopping httpd, a delay (of default 10 second) is required
-# before SIGKILLing the httpd parent; this gives enough time for the
-# httpd parent to SIGKILL any errant children.
 stop() {
         sudo /etc/init.d/httpd stop;
 }
@@ -48,4 +47,3 @@ case "$1" in
 esac
 
 exit $RETVAL
-
